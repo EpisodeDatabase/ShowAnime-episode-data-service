@@ -11,6 +11,10 @@ const {
 } = require('./data/cache.js')
 const { Episodes_data } = require('./database/EpisodeDataBase.js')
 
+router.get('/', (req, res) => {
+    res.status(200).send('This site is a part of ShowAnime Microservice-Based Database Architecture System')
+})
+
 router.post('/episode-data', async (req, res) => {
     try {
 
