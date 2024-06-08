@@ -7,7 +7,19 @@ const port = 3002;
 const EpisodeDataBase = require('./database/EpisodeDataBase.js')
 const api = require('./api.js');
 
-app.use(cors());
+const allowedOrigins = ['http://localhost:3000', 'https://showanime.fun', 'http://showanime.fun'];
+
+const corsOptions = {
+  origin: function (origin, callback) {
+    if (allowedOrigins.indexOf(origin) !== -1 || !origin) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  }
+};
+
+app.use(cors(corsOptions));
 app.use(express.json());
 app.use(express.static(path.join(__dirname, '../ShowAnime')));
 app.use('/', api);
