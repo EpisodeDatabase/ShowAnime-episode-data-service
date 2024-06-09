@@ -29,8 +29,8 @@ const Episodes_data_schema = new Schema({
 });
 
 const Episodes = new Schema({
-    saId: { type: Number, required: true },
-    malId: { type: Number, required: true },
+    saId: { type: String, required: true },
+    malId: { type: String, required: true },
     episodes: { type: [Episodes_data_schema], required: true }
 }, { collection: 'episodes_data' })
 
