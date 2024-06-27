@@ -7,7 +7,7 @@ const port = 3002;
 const EpisodeDataBase = require('./database/EpisodeDataBase.js')
 const api = require('./api.js');
 
-const allowedOrigins = ['http://localhost:3000', 'https://showanime.fun', 'http://showanime.fun'];
+const allowedOrigins = ['http://localhost:3000', "http://192.168.29.231:3000", 'https://showanime.fun', 'http://showanime.fun'];
 
 const corsOptions = {
   origin: function (origin, callback) {
